@@ -1,3 +1,9 @@
-{% if  %}
-    
+{% if  lastest_quiestion_list %}
+{% for question in  lastest_quiestion_list %}
+<ul>
+    <li><a href= {% url 'polls:detail' question.id %} >{{question.question_test}}</a></li>
+</ul>
+{% endfor %}    
+{% else %}
+    <p>No Polls aviable yet.</p>
 {% endif %}
